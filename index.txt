@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Free Resume Builder Online</title>
+<meta name="description" content="Create a professional resume online for free. Simple resume builder with instant preview and PDF download.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{font-family:Arial;background:#f4f4f4;padding:20px}
+.container{max-width:1000px;margin:auto;display:flex;gap:20px}
+.box{background:#fff;padding:20px;border-radius:8px;width:50%}
+input,textarea{width:100%;margin:8px 0;padding:8px}
+button{padding:10px;width:100%;background:#007bff;color:#fff;border:none}
+.resume h1{margin-bottom:5px}
+</style>
+</head>
+
+<body>
+
+<h1 style="text-align:center">Free Resume Builder</h1>
+
+<div class="container">
+  <div class="box">
+    <h2>Enter Details</h2>
+    <input id="name" placeholder="Full Name" oninput="update()">
+    <input id="title" placeholder="Job Title" oninput="update()">
+    <input id="email" placeholder="Email" oninput="update()">
+    <textarea id="summary" placeholder="Summary" oninput="update()"></textarea>
+    <textarea id="skills" placeholder="Skills" oninput="update()"></textarea>
+    <button onclick="window.print()">Download PDF</button>
+  </div>
+
+  <div class="box resume">
+    <h1 id="r_name">Your Name</h1>
+    <h3 id="r_title">Job Title</h3>
+    <p id="r_email"></p>
+    <h3>Summary</h3>
+    <p id="r_summary"></p>
+    <h3>Skills</h3>
+    <p id="r_skills"></p>
+  </div>
+</div>
+
+<script>
+function update(){
+  r_name.innerText=name.value;
+  r_title.innerText=title.value;
+  r_email.innerText=email.value;
+  r_summary.innerText=summary.value;
+  r_skills.innerText=skills.value;
+}
+</script>
+
+</body>
+</html>
